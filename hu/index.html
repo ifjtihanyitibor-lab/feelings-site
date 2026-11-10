@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>F33l1ngs – Adatkezelési tájékoztató</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<nav class="lang"><span>Magyar</span><a href="../en/" hreflang="en" lang="en">English</a><a href="../da/" hreflang="da" lang="da">Dansk</a></nav>
+
+<h1>F33l1ngs – Adatkezelési tájékoztató</h1>
+<p class="meta">Hatályos: 2026. november 10-től · Verzió: 5.0</p>
+
+<p class="note">Ezt a tájékoztatót az app fejlesztője írta, jogász még nem nézte át. Ha valami nem egyértelmű, írj nekem (lásd: <a href="#kapcsolat">Kapcsolat</a>).</p>
+
+<h2 id="adatkezelo">Ki kezeli az adataidat?</h2>
+<p>Az adatkezelő: <strong>Tibor Tihanyi</strong> magánszemély, az F33l1ngs app fejlesztője (Magyarország). Kapcsolat: <a href="mailto:tibor.tihanyi.dk@gmail.com">tibor.tihanyi.dk@gmail.com</a>.</p>
+<p>Az F33l1ngs érzésnapló Androidra. Jelenleg zárt körben, meghívott felhasználók használják, és nincs benne reklám, analitika vagy hibakövető szolgáltatás.</p>
+
+<h2 id="fiok-nelkul">Fiók nélkül</h2>
+<p>Ha nem lépsz be, a napló <strong>csak a telefonodon</strong> van. Az app nem küld róla adatot sehová, mi sem látjuk.</p>
+<p>Az Android rendszermentése (Google-backup) ki van kapcsolva az appnál, hogy a napló és a belépési adatok ne kerüljenek a Google-fiókodba. Fiók nélkül ezért a CSV-export az egyetlen mentés: ha elveszíted a telefont, a napló is elveszik.</p>
+
+<h2 id="szinkron">Fiókkal: titkosított szinkron</h2>
+<p>A fiók nem kötelező. Ha a Beállításokban Google-fiókkal belépsz, és <strong>kifejezetten hozzájárulsz</strong>, a napló a telefonjaid között szinkronizálódik. A napló lelki állapotról szól, ezért különleges adatnak számít; az adatkezelés jogalapja a kifejezett hozzájárulásod (GDPR 6. cikk (1) a) és 9. cikk (2) a)). A hozzájárulást bármikor visszavonhatod kilépéssel és a fiók törlésével; ez nem érinti a korábbi adatkezelés jogszerűségét.</p>
+<p>A naplót a telefon <strong>titkosítja, mielőtt elküldi</strong> (végponttól végpontig titkosítás, AES-256-GCM). A kulcs csak a telefonjaidon van és a helyreállítási kódodból állítható elő. A szerver és mi sem tudjuk elolvasni.</p>
+
+<table>
+<thead><tr><th>Mi kerül a szerverre?</th><th>Hogyan?</th></tr></thead>
+<tbody>
+<tr><td>A bejegyzések teljes tartalma: időpont, időzóna, megjegyzés, forrás, érzések és intenzitások</td><td>Titkosítva</td></tr>
+<tr><td>A saját érzéseid neve, és hogy mely beépített érzéseket rejtetted el</td><td>Titkosítva</td></tr>
+<tr><td>Az adatkulcs, a helyreállítási kóddal becsomagolva</td><td>Titkosítva (a kód nélkül használhatatlan)</td></tr>
+<tr><td>A Google-fiókod e-mail címe és azonosítója, valamint amit a Google a belépéskor átad (név, profilkép címe)</td><td>Olvashatóan (a belépéshez kell)</td></tr>
+<tr><td>Az elemek száma, véletlen azonosítója és mérete, a módosítás ideje és a törlés ténye. Ebből látszik, mikor használtad az appot, de az nem, hogy mit írtál.</td><td>Olvashatóan (a szinkronhoz kell)</td></tr>
+<tr><td>A kérések IP-címe és ideje a szolgáltató naplóiban</td><td>Olvashatóan, 1 napig</td></tr>
+</tbody>
+</table>
+
+<p>A szinkron nem véd minden ellen. A telefonon lévő napló nincs külön titkosítva, azt a képernyőzár védi: feloldott vagy feltört telefonon olvasható. A módosított app ellen sem véd.</p>
+<p>Az értesítési, téma-, nyelvi és zárbeállítások nem szinkronizálódnak, csak a telefonodon vannak.</p>
+
+<h2 id="kod">A helyreállítási kód</h2>
+<p>A szinkron beállításakor az app egy helyreállítási kódot mutat. <strong>Ezt sem az app, sem a szerver nem tárolja.</strong> Új telefonon vagy újratelepítés után ezzel lehet a naplót visszaállítani.</p>
+<ul>
+<li>Ha elveszted a kódot, de van még bejelentkezett telefonod, ott készíthetsz újat.</li>
+<li><strong>Ha a kód elveszett, és nincs bejelentkezett telefonod, a szerveren lévő napló végleg elveszett.</strong> Mi sem tudjuk visszaállítani, mert nem tudjuk kibontani. Újrakezdéskor az app új kulcsot készít, és a szerver régi tartalma törlődik.</li>
+</ul>
+
+<h2 id="jelszokezelo">Mit jelent a jelszókezelős mentés?</h2>
+<p>A kódot kétféleképpen mentheted:</p>
+<ul>
+<li><strong>Mentés a jelszókezelőbe</strong> (ajánlott): a kód jelszóként a Google Jelszókezelőbe kerül, ugyanahhoz a Google-fiókhoz, amellyel belépsz. Így nehezebb elveszíteni. Cserébe aki átveszi a Google-fiókodat, a kódhoz is hozzáférhet. Ha a jelszókezelőben nincs bekapcsolva az eszközön történő titkosítás, elvileg a Google is hozzáférhet a kódhoz és így a naplódhoz. Hogy a mentett jelszavak alapból végponttól végpontig titkosítottak-e, azt nem tudtuk megerősíteni.</li>
+<li><strong>Leírom magamnak</strong>: a kód független a Google-fióktól, de a megőrzése csak rajtad múlik.</li>
+</ul>
+
+<h2 id="feldolgozok">Kik férnek hozzá az adatokhoz?</h2>
+<table>
+<thead><tr><th>Szolgáltató</th><th>Szerepe</th><th>Hol?</th></tr></thead>
+<tbody>
+<tr><td><a href="https://supabase.com/legal/dpa">Supabase</a> (Supabase Pte. Ltd., Szingapúr)</td><td>Adatfeldolgozó: a szinkronszerver és a belépés. Az adatfeldolgozói szerződés (DPA) a Supabase ÁSZF-jének része, és az Európai Bizottság általános adatvédelmi kikötéseit (SCC) tartalmazza. Alvállalkozói <a href="https://supabase.com/legal/customer-resources/subprocessor-list">itt</a> vannak felsorolva.</td><td>Az adat Frankfurtban (AWS eu-central-1) van</td></tr>
+<tr><td>Google</td><td>A Google-belépés és a Google Jelszókezelő. A Google-fiókodat a Google saját adatkezelőként kezeli, a <a href="https://policies.google.com/privacy">saját tájékoztatója</a> szerint.</td><td>A Google szerint</td></tr>
+<tr><td>GitHub (GitHub Pages)</td><td>Ezt az oldalt szolgálja ki, és látja a látogatók IP-címét.</td><td>A GitHub szerint</td></tr>
+</tbody>
+</table>
+<p>A titkosított naplót egyikük sem tudja elolvasni. Az adatokat nem adjuk el, és senkivel nem osztjuk meg.</p>
+
+<h2 id="mentes">Mentés a szerverről és megőrzés</h2>
+<ul>
+<li>Az adatokat addig tároljuk, amíg a fiókod él.</li>
+<li>A szerverről naponta titkosított mentés készül az adatkezelő saját gépére (a fiókok e-mail címe és azonosítója, valamint a titkosított napló). <strong>Egy mentést 14 napig őrzünk meg</strong>, utána automatikusan törlődik. A fiók törlése után az adataid így még legfeljebb 14 napig megmaradhatnak ezekben a mentésekben. Ezeket csak a szerver helyreállítására használjuk.</li>
+<li>A szolgáltató kérésnaplói (IP-cím, idő) 1 napig maradnak meg.</li>
+</ul>
+
+<h2 id="torles">A fiók törlése</h2>
+<p>A fiókot az appban, a Beállításokban törölheted. Ha már nincs meg a telefonod, írj a lenti címre, és a kérésedre töröljük. A törlés azonnal eltávolítja a fiókodat és a szerveren lévő minden adatodat (a mentésekben még legfeljebb 14 napig megmaradnak, lásd fent). A telefonodon lévő napló megmarad; azt az appban külön törölheted.</p>
+
+<h2 id="jogok">A jogaid</h2>
+<p>Jogod van tájékoztatást kérni, hozzáférni az adataidhoz, helyesbíteni és töröltetni őket, korlátozni a kezelésüket, tiltakozni, megkapni őket hordozható formában, és a hozzájárulásodat visszavonni. A naplódat az appból CSV-fájlba exportálhatod; a szerverről csak titkosított adatot tudnánk adni. Kéréssel írj a lenti címre, egy hónapon belül válaszolunk.</p>
+<p>Panaszt tehetsz a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (<a href="https://naih.hu">naih.hu</a>), vagy a lakóhelyed szerinti adatvédelmi hatóságnál (Dániában: <a href="https://www.datatilsynet.dk">Datatilsynet</a>).</p>
+
+<h2 id="kapcsolat">Kapcsolat</h2>
+<p>Tibor Tihanyi · <a href="mailto:tibor.tihanyi.dk@gmail.com">tibor.tihanyi.dk@gmail.com</a></p>
+
+<h2 id="valtozasok">Változások</h2>
+<p>Ha a tájékoztató érdemben változik, az appban vagy e-mailben szólunk, mielőtt az új változat hatályba lép.</p>
+
+<footer><a href="../">F33l1ngs</a></footer>
+</main>
+</body>
+</html>

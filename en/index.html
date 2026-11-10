@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>F33l1ngs – Privacy policy</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<nav class="lang"><a href="../hu/" hreflang="hu" lang="hu">Magyar</a><span>English</span><a href="../da/" hreflang="da" lang="da">Dansk</a></nav>
+
+<h1>F33l1ngs – Privacy policy</h1>
+<p class="meta">Effective from 10 November 2026 · Version 5.0</p>
+
+<p class="note">The app's developer wrote this policy, and no lawyer has reviewed it yet. If anything is unclear, write to me (see <a href="#contact">Contact</a>).</p>
+
+<h2 id="controller">Who handles your data?</h2>
+<p>The controller is <strong>Tibor Tihanyi</strong>, a private individual and the developer of the F33l1ngs app (Hungary). Contact: <a href="mailto:tibor.tihanyi.dk@gmail.com">tibor.tihanyi.dk@gmail.com</a>.</p>
+<p>F33l1ngs is a feelings journal for Android. It is currently used by a small group of invited users, and it contains no ads, analytics or crash reporting.</p>
+
+<h2 id="no-account">Without an account</h2>
+<p>If you don't sign in, your journal exists <strong>only on your phone</strong>. The app sends nothing about it anywhere, and we can't see it.</p>
+<p>Android system backup (Google backup) is turned off for the app, so the journal and sign-in data don't end up in your Google account. Without an account, the CSV export is therefore your only backup: if you lose your phone, you lose the journal too.</p>
+
+<h2 id="sync">With an account: encrypted sync</h2>
+<p>An account is optional. If you sign in with Google in Settings and <strong>give your explicit consent</strong>, your journal syncs between your phones. The journal is about your mental state, so it counts as special category data. We process it on the basis of your explicit consent (GDPR Article 6(1)(a) and Article 9(2)(a)). You can withdraw your consent at any time by signing out and deleting your account. Withdrawing doesn't affect the lawfulness of the processing before it.</p>
+<p>Your phone <strong>encrypts the journal before sending it</strong> (end-to-end encryption, AES-256-GCM). The key exists only on your phones and can be recovered from your recovery code. Neither the server nor we can read your journal.</p>
+
+<table>
+<thead><tr><th>What goes to the server?</th><th>How?</th></tr></thead>
+<tbody>
+<tr><td>The full content of your entries: time, time zone, note, source, feelings and intensities</td><td>Encrypted</td></tr>
+<tr><td>The names of your own feelings, and which built-in feelings you have hidden</td><td>Encrypted</td></tr>
+<tr><td>The data key, wrapped with your recovery code</td><td>Encrypted (useless without the code)</td></tr>
+<tr><td>Your Google account's email address and ID, plus what Google passes on at sign-in (name, profile picture URL)</td><td>Readable (needed for sign-in)</td></tr>
+<tr><td>The number of items, their random IDs and sizes, when they changed, and whether they were deleted. This shows when you used the app, but not what you wrote.</td><td>Readable (needed for sync)</td></tr>
+<tr><td>The IP address and time of requests, in the provider's logs</td><td>Readable, kept for 1 day</td></tr>
+</tbody>
+</table>
+
+<p>Sync doesn't protect against everything. The journal on your phone isn't separately encrypted; your screen lock protects it, so anyone with an unlocked or compromised phone can read it. It also doesn't protect against a modified app.</p>
+<p>Notification, theme, language and lock settings don't sync. They stay on your phone.</p>
+
+<h2 id="code">Your recovery code</h2>
+<p>When you set up sync, the app shows a recovery code. <strong>Neither the app nor the server stores it.</strong> You use it to restore your journal on a new phone or after reinstalling the app.</p>
+<ul>
+<li>If you lose the code but still have a signed-in phone, you can create a new code there.</li>
+<li><strong>If you lose the code and have no signed-in phone, your journal on the server is lost for good.</strong> We can't restore it either, because we can't decrypt it. When you start over, the app creates a new key and the old content on the server is deleted.</li>
+</ul>
+
+<h2 id="password-manager">What saving to the password manager means</h2>
+<p>You can save the code in two ways:</p>
+<ul>
+<li><strong>Save to password manager</strong> (recommended): the code is saved as a password in Google Password Manager, in the same Google account you sign in with. This makes it harder to lose. The trade-off: anyone who takes over your Google account can also get the code. If on-device encryption isn't turned on in the password manager, Google could in principle access the code, and with it your journal. We couldn't confirm whether saved passwords are end-to-end encrypted by default.</li>
+<li><strong>I'll write it down</strong>: the code doesn't depend on your Google account, but keeping it safe is entirely up to you.</li>
+</ul>
+
+<h2 id="processors">Who has access to the data?</h2>
+<table>
+<thead><tr><th>Provider</th><th>Role</th><th>Where?</th></tr></thead>
+<tbody>
+<tr><td><a href="https://supabase.com/legal/dpa">Supabase</a> (Supabase Pte. Ltd., Singapore)</td><td>Processor: the sync server and sign-in. Its data processing agreement (DPA) is part of the Supabase terms of service and includes the European Commission's Standard Contractual Clauses (SCCs). Its sub-processors are listed <a href="https://supabase.com/legal/customer-resources/subprocessor-list">here</a>.</td><td>Data is stored in Frankfurt (AWS eu-central-1)</td></tr>
+<tr><td>Google</td><td>Google sign-in and Google Password Manager. Google handles your Google account as an independent controller, under its <a href="https://policies.google.com/privacy">own privacy policy</a>.</td><td>As Google states</td></tr>
+<tr><td>GitHub (GitHub Pages)</td><td>Serves this website and sees visitors' IP addresses.</td><td>As GitHub states</td></tr>
+</tbody>
+</table>
+<p>None of them can read the encrypted journal. We don't sell your data or share it with anyone.</p>
+
+<h2 id="backup">Server backups and retention</h2>
+<ul>
+<li>We keep your data for as long as your account exists.</li>
+<li>An encrypted backup of the server is made every day on the controller's own computer (account email addresses and IDs, plus the encrypted journal). <strong>Each backup is kept for 14 days</strong> and then deleted automatically. After you delete your account, your data may therefore remain in these backups for up to 14 days. They are used only to restore the server.</li>
+<li>The provider's request logs (IP address, time) are kept for 1 day.</li>
+</ul>
+
+<h2 id="deletion">Deleting your account</h2>
+<p>You can delete your account in the app, in Settings. If you no longer have your phone, write to the address below and we will delete it at your request. Deletion immediately removes your account and all your data on the server (it may remain in backups for up to 14 days, see above). The journal on your phone stays; you can delete it separately in the app.</p>
+
+<h2 id="rights">Your rights</h2>
+<p>You have the right to be informed, to access your data, to have it corrected or erased, to restrict or object to its processing, to receive it in a portable format, and to withdraw your consent. You can export your journal to a CSV file in the app; from the server we could only give you encrypted data. Send requests to the address below, and we will reply within one month.</p>
+<p>You can lodge a complaint with the Hungarian National Authority for Data Protection and Freedom of Information (<a href="https://naih.hu">naih.hu</a>) or with the data protection authority where you live (in Denmark: <a href="https://www.datatilsynet.dk">Datatilsynet</a>).</p>
+
+<h2 id="contact">Contact</h2>
+<p>Tibor Tihanyi · <a href="mailto:tibor.tihanyi.dk@gmail.com">tibor.tihanyi.dk@gmail.com</a></p>
+
+<h2 id="changes">Changes</h2>
+<p>If this policy changes materially, we will tell you in the app or by email before the new version takes effect.</p>
+
+<footer><a href="../">F33l1ngs</a></footer>
+</main>
+</body>
+</html>

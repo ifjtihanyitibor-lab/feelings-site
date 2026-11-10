@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>F33l1ngs – Privatlivspolitik</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<nav class="lang"><a href="../hu/" hreflang="hu" lang="hu">Magyar</a><a href="../en/" hreflang="en" lang="en">English</a><span>Dansk</span></nav>
+
+<h1>F33l1ngs – Privatlivspolitik</h1>
+<p class="meta">Gælder fra 10. november 2026 · Version 5.0</p>
+
+<p class="note">Appens udvikler har skrevet denne politik, og den er endnu ikke gennemgået af en jurist. Hvis noget er uklart, så skriv til mig (se <a href="#kontakt">Kontakt</a>).</p>
+
+<h2 id="dataansvarlig">Hvem behandler dine data?</h2>
+<p>Dataansvarlig er <strong>Tibor Tihanyi</strong>, privatperson og udvikler af appen F33l1ngs (Ungarn). Kontakt: <a href="mailto:tibor.tihanyi.dk@gmail.com">tibor.tihanyi.dk@gmail.com</a>.</p>
+<p>F33l1ngs er en følelsesdagbog til Android. Den bruges i øjeblikket af en lille gruppe inviterede brugere og indeholder ingen reklamer, analyse eller fejlrapportering.</p>
+
+<h2 id="uden-konto">Uden konto</h2>
+<p>Hvis du ikke logger ind, findes din dagbog <strong>kun på din telefon</strong>. Appen sender ingen data om den nogen steder hen, og vi kan ikke se den.</p>
+<p>Androids systembackup (Google-backup) er slået fra for appen, så dagbogen og loginoplysningerne ikke havner på din Google-konto. Uden konto er CSV-eksporten derfor din eneste backup: Hvis du mister telefonen, mister du også dagbogen.</p>
+
+<h2 id="synkronisering">Med konto: krypteret synkronisering</h2>
+<p>En konto er valgfri. Hvis du logger ind med Google under Indstillinger og <strong>giver dit udtrykkelige samtykke</strong>, synkroniseres din dagbog mellem dine telefoner. Dagbogen handler om din mentale tilstand og er derfor en særlig kategori af personoplysninger. Vi behandler den på grundlag af dit udtrykkelige samtykke (GDPR artikel 6, stk. 1, litra a, og artikel 9, stk. 2, litra a). Du kan til enhver tid trække dit samtykke tilbage ved at logge ud og slette din konto. Det påvirker ikke lovligheden af behandlingen før tilbagetrækningen.</p>
+<p>Din telefon <strong>krypterer dagbogen, før den sendes</strong> (end-to-end-kryptering, AES-256-GCM). Nøglen findes kun på dine telefoner og kan gendannes med din gendannelseskode. Hverken serveren eller vi kan læse din dagbog.</p>
+
+<table>
+<thead><tr><th>Hvad sendes til serveren?</th><th>Hvordan?</th></tr></thead>
+<tbody>
+<tr><td>Det fulde indhold af dine indlæg: tidspunkt, tidszone, note, kilde, følelser og intensiteter</td><td>Krypteret</td></tr>
+<tr><td>Navnene på dine egne følelser, og hvilke indbyggede følelser du har skjult</td><td>Krypteret</td></tr>
+<tr><td>Datanøglen, pakket ind med din gendannelseskode</td><td>Krypteret (ubrugelig uden koden)</td></tr>
+<tr><td>Din Google-kontos e-mailadresse og id samt det, Google videregiver ved login (navn, adresse på profilbillede)</td><td>Læsbart (nødvendigt for login)</td></tr>
+<tr><td>Antallet af elementer, deres tilfældige id og størrelse, hvornår de blev ændret, og om de er slettet. Det viser, hvornår du brugte appen, men ikke hvad du skrev.</td><td>Læsbart (nødvendigt for synkronisering)</td></tr>
+<tr><td>IP-adresse og tidspunkt for forespørgsler i udbyderens logfiler</td><td>Læsbart, gemmes i 1 dag</td></tr>
+</tbody>
+</table>
+
+<p>Synkroniseringen beskytter ikke mod alt. Dagbogen på din telefon er ikke krypteret særskilt; den beskyttes af skærmlåsen, så den kan læses på en ulåst eller kompromitteret telefon. Den beskytter heller ikke mod en ændret app.</p>
+<p>Indstillinger for notifikationer, tema, sprog og lås synkroniseres ikke. De forbliver på din telefon.</p>
+
+<h2 id="kode">Din gendannelseskode</h2>
+<p>Når du opsætter synkronisering, viser appen en gendannelseskode. <strong>Hverken appen eller serveren gemmer den.</strong> Du bruger den til at gendanne din dagbog på en ny telefon eller efter en geninstallation.</p>
+<ul>
+<li>Hvis du mister koden, men stadig har en telefon, hvor du er logget ind, kan du lave en ny kode der.</li>
+<li><strong>Hvis du mister koden og ikke har nogen telefon, hvor du er logget ind, er din dagbog på serveren tabt for altid.</strong> Vi kan heller ikke gendanne den, fordi vi ikke kan dekryptere den. Når du starter forfra, laver appen en ny nøgle, og det gamle indhold på serveren slettes.</li>
+</ul>
+
+<h2 id="adgangskodeadministrator">Hvad betyder det at gemme i adgangskodeadministratoren?</h2>
+<p>Du kan gemme koden på to måder:</p>
+<ul>
+<li><strong>Gem i adgangskodeadministratoren</strong> (anbefales): Koden gemmes som en adgangskode i Google Adgangskodeadministrator, på den samme Google-konto, som du logger ind med. Så er den sværere at miste. Til gengæld kan den, der overtager din Google-konto, også få adgang til koden. Hvis kryptering på enheden ikke er slået til i adgangskodeadministratoren, kan Google i princippet få adgang til koden og dermed til din dagbog. Vi har ikke kunnet bekræfte, om gemte adgangskoder som standard er end-to-end-krypterede.</li>
+<li><strong>Jeg skriver den ned</strong>: Koden er uafhængig af din Google-konto, men det er helt op til dig at passe på den.</li>
+</ul>
+
+<h2 id="databehandlere">Hvem har adgang til dataene?</h2>
+<table>
+<thead><tr><th>Udbyder</th><th>Rolle</th><th>Hvor?</th></tr></thead>
+<tbody>
+<tr><td><a href="https://supabase.com/legal/dpa">Supabase</a> (Supabase Pte. Ltd., Singapore)</td><td>Databehandler: synkroniseringsserveren og login. Databehandleraftalen (DPA) er en del af Supabases vilkår og indeholder Europa-Kommissionens standardkontraktbestemmelser (SCC). Underdatabehandlerne er listet <a href="https://supabase.com/legal/customer-resources/subprocessor-list">her</a>.</td><td>Dataene ligger i Frankfurt (AWS eu-central-1)</td></tr>
+<tr><td>Google</td><td>Google-login og Google Adgangskodeadministrator. Google behandler din Google-konto som selvstændig dataansvarlig efter sin <a href="https://policies.google.com/privacy">egen privatlivspolitik</a>.</td><td>Ifølge Google</td></tr>
+<tr><td>GitHub (GitHub Pages)</td><td>Leverer denne hjemmeside og ser besøgendes IP-adresser.</td><td>Ifølge GitHub</td></tr>
+</tbody>
+</table>
+<p>Ingen af dem kan læse den krypterede dagbog. Vi sælger ikke dine data og deler dem ikke med nogen.</p>
+
+<h2 id="backup">Backup af serveren og opbevaring</h2>
+<ul>
+<li>Vi opbevarer dine data, så længe din konto findes.</li>
+<li>Der laves hver dag en krypteret backup af serveren på den dataansvarliges egen computer (kontoernes e-mailadresser og id samt den krypterede dagbog). <strong>Hver backup gemmes i 14 dage</strong> og slettes derefter automatisk. Når du har slettet din konto, kan dine data derfor findes i disse backups i op til 14 dage. De bruges kun til at gendanne serveren.</li>
+<li>Udbyderens logfiler over forespørgsler (IP-adresse, tidspunkt) gemmes i 1 dag.</li>
+</ul>
+
+<h2 id="sletning">Sletning af din konto</h2>
+<p>Du kan slette din konto i appen under Indstillinger. Hvis du ikke længere har din telefon, så skriv til adressen nedenfor, så sletter vi den på din anmodning. Sletningen fjerner straks din konto og alle dine data på serveren (de kan findes i backups i op til 14 dage, se ovenfor). Dagbogen på din telefon bliver liggende; den kan du slette særskilt i appen.</p>
+
+<h2 id="rettigheder">Dine rettigheder</h2>
+<p>Du har ret til oplysning, til indsigt i dine data, til berigtigelse og sletning, til begrænsning af og indsigelse mod behandlingen, til at få dine data i et overførbart format og til at trække dit samtykke tilbage. Du kan eksportere din dagbog til en CSV-fil i appen; fra serveren kan vi kun give dig krypterede data. Send din anmodning til adressen nedenfor, så svarer vi inden for en måned.</p>
+<p>Du kan klage til Datatilsynet (<a href="https://www.datatilsynet.dk">datatilsynet.dk</a>) eller til den ungarske databeskyttelsesmyndighed, Nemzeti Adatvédelmi és Információszabadság Hatóság (<a href="https://naih.hu">naih.hu</a>).</p>
+
+<h2 id="kontakt">Kontakt</h2>
+<p>Tibor Tihanyi · <a href="mailto:tibor.tihanyi.dk@gmail.com">tibor.tihanyi.dk@gmail.com</a></p>
+
+<h2 id="aendringer">Ændringer</h2>
+<p>Hvis politikken ændres væsentligt, giver vi besked i appen eller på e-mail, før den nye version træder i kraft.</p>
+
+<footer><a href="../">F33l1ngs</a></footer>
+</main>
+</body>
+</html>
